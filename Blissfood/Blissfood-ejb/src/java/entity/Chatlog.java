@@ -29,14 +29,14 @@ public class Chatlog implements Serializable {
 
     private String chat;
 
-    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    private Post post;
-
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    private BlissfoodUser giver;
-
-    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-    private BlissfoodUser receiver;
+//    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private Post post;
+//
+//    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private BlissfoodUser giver;
+//
+//    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private BlissfoodUser receiver;
 
     public Long getId() {
         return id;
@@ -69,6 +69,20 @@ public class Chatlog implements Serializable {
     @Override
     public String toString() {
         return "entity.Chatlog[ id=" + id + " ]";
+    }
+
+    /**
+     * @return the chat
+     */
+    public String getChat() {
+        return chat;
+    }
+
+    /**
+     * @param chat the chat to set
+     */
+    public void setChat(String chat) {
+        this.chat = chat;
     }
 
 }

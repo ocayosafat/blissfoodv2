@@ -42,23 +42,23 @@ public class BlissfoodUser implements Serializable {
     private int numReports;
     private boolean banned;
 
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "giver")
-    private List<Review> reviewsAsGiver;
-
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "receiver")
-    private List<Review> reviewsAsReceiver;
-
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "giver")
-    private List<Chatlog> chatlogsAsGiver;
-
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "receiver")
-    private List<Chatlog> chatlogsAsReceiver;
-
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "giver")
-    private List<Post> giverPosts;
-
-    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "receiver")
-    private List<Post> receiverPosts;
+//    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "giver")
+//    private List<Review> reviewsAsGiver;
+//
+//    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "receiver")
+//    private List<Review> reviewsAsReceiver;
+//
+//    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "giver")
+//    private List<Chatlog> chatlogsAsGiver;
+//
+//    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "receiver")
+//    private List<Chatlog> chatlogsAsReceiver;
+//
+//    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "giver")
+//    private List<Post> giverPosts;
+//
+//    @OneToMany(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER, mappedBy = "receiver")
+//    private List<Post> receiverPosts;
 
     public Long getId() {
         return id;
@@ -275,88 +275,88 @@ public class BlissfoodUser implements Serializable {
         this.banned = banned;
     }
 
-    /**
-     * @return the reviewsAsGiver
-     */
-    public List<Review> getReviewsAsGiver() {
-        return reviewsAsGiver;
-    }
-
-    /**
-     * @param reviewsAsGiver the reviewsAsGiver to set
-     */
-    public void setReviewsAsGiver(List<Review> reviewsAsGiver) {
-        this.reviewsAsGiver = reviewsAsGiver;
-    }
-
-    /**
-     * @return the reviewsAsReceiver
-     */
-    public List<Review> getReviewsAsReceiver() {
-        return reviewsAsReceiver;
-    }
-
-    /**
-     * @param reviewsAsReceiver the reviewsAsReceiver to set
-     */
-    public void setReviewsAsReceiver(List<Review> reviewsAsReceiver) {
-        this.reviewsAsReceiver = reviewsAsReceiver;
-    }
-
-    /**
-     * @return the chatlogsAsGiver
-     */
-    public List<Chatlog> getChatlogsAsGiver() {
-        return chatlogsAsGiver;
-    }
-
-    /**
-     * @param chatlogsAsGiver the chatlogsAsGiver to set
-     */
-    public void setChatlogsAsGiver(List<Chatlog> chatlogsAsGiver) {
-        this.chatlogsAsGiver = chatlogsAsGiver;
-    }
-
-    /**
-     * @return the chatlogsAsReceiver
-     */
-    public List<Chatlog> getChatlogsAsReceiver() {
-        return chatlogsAsReceiver;
-    }
-
-    /**
-     * @param chatlogsAsReceiver the chatlogsAsReceiver to set
-     */
-    public void setChatlogsAsReceiver(List<Chatlog> chatlogsAsReceiver) {
-        this.chatlogsAsReceiver = chatlogsAsReceiver;
-    }
-
-    /**
-     * @return the giverPosts
-     */
-    public List<Post> getGiverPosts() {
-        return giverPosts;
-    }
-
-    /**
-     * @param giverPosts the giverPosts to set
-     */
-    public void setGiverPosts(List<Post> giverPosts) {
-        this.giverPosts = giverPosts;
-    }
-
-    /**
-     * @return the receiverPosts
-     */
-    public List<Post> getReceiverPosts() {
-        return receiverPosts;
-    }
-
-    /**
-     * @param receiverPosts the receiverPosts to set
-     */
-    public void setReceiverPosts(List<Post> receiverPosts) {
-        this.receiverPosts = receiverPosts;
-    }
+//    /**
+//     * @return the reviewsAsGiver
+//     */
+//    public List<Review> getReviewsAsGiver() {
+//        return reviewsAsGiver;
+//    }
+//
+//    /**
+//     * @param reviewsAsGiver the reviewsAsGiver to set
+//     */
+//    public void setReviewsAsGiver(List<Review> reviewsAsGiver) {
+//        this.reviewsAsGiver = reviewsAsGiver;
+//    }
+//
+//    /**
+//     * @return the reviewsAsReceiver
+//     */
+//    public List<Review> getReviewsAsReceiver() {
+//        return reviewsAsReceiver;
+//    }
+//
+//    /**
+//     * @param reviewsAsReceiver the reviewsAsReceiver to set
+//     */
+//    public void setReviewsAsReceiver(List<Review> reviewsAsReceiver) {
+//        this.reviewsAsReceiver = reviewsAsReceiver;
+//    }
+//
+//    /**
+//     * @return the chatlogsAsGiver
+//     */
+//    public List<Chatlog> getChatlogsAsGiver() {
+//        return chatlogsAsGiver;
+//    }
+//
+//    /**
+//     * @param chatlogsAsGiver the chatlogsAsGiver to set
+//     */
+//    public void setChatlogsAsGiver(List<Chatlog> chatlogsAsGiver) {
+//        this.chatlogsAsGiver = chatlogsAsGiver;
+//    }
+//
+//    /**
+//     * @return the chatlogsAsReceiver
+//     */
+//    public List<Chatlog> getChatlogsAsReceiver() {
+//        return chatlogsAsReceiver;
+//    }
+//
+//    /**
+//     * @param chatlogsAsReceiver the chatlogsAsReceiver to set
+//     */
+//    public void setChatlogsAsReceiver(List<Chatlog> chatlogsAsReceiver) {
+//        this.chatlogsAsReceiver = chatlogsAsReceiver;
+//    }
+//
+//    /**
+//     * @return the giverPosts
+//     */
+//    public List<Post> getGiverPosts() {
+//        return giverPosts;
+//    }
+//
+//    /**
+//     * @param giverPosts the giverPosts to set
+//     */
+//    public void setGiverPosts(List<Post> giverPosts) {
+//        this.giverPosts = giverPosts;
+//    }
+//
+//    /**
+//     * @return the receiverPosts
+//     */
+//    public List<Post> getReceiverPosts() {
+//        return receiverPosts;
+//    }
+//
+//    /**
+//     * @param receiverPosts the receiverPosts to set
+//     */
+//    public void setReceiverPosts(List<Post> receiverPosts) {
+//        this.receiverPosts = receiverPosts;
+//    }
 
 }

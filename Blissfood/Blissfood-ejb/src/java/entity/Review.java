@@ -33,12 +33,12 @@ public class Review implements Serializable {
     private String title;
     private String description;
     
-    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-    private BlissfoodUser giver;
-    
-    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-    private BlissfoodUser receiver;
-    
+//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private BlissfoodUser giver;
+//    
+//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private BlissfoodUser receiver;
+//    
 
     public Long getId() {
         return id;
@@ -105,22 +105,22 @@ public class Review implements Serializable {
         this.description = description;
     }
 
-    public BlissfoodUser getGiver() {
-        return giver;
-    }
-
-    public void setGiver(BlissfoodUser giver) {
-        this.giver = giver;
-    }
-
-    public BlissfoodUser getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(BlissfoodUser receiver) {
-        this.receiver = receiver;
-    }
-    
-    
+//    public BlissfoodUser getGiver() {
+//        return giver;
+//    }
+//
+//    public void setGiver(BlissfoodUser giver) {
+//        this.giver = giver;
+//    }
+//
+//    public BlissfoodUser getReceiver() {
+//        return receiver;
+//    }
+//
+//    public void setReceiver(BlissfoodUser receiver) {
+//        this.receiver = receiver;
+//    }
+//    
+//    
     
 }

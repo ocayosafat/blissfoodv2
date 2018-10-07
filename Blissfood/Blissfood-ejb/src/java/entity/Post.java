@@ -42,15 +42,15 @@ public class Post implements Serializable {
     private int numLikes;
     private boolean deleted;
     private int numReports;
-    
-    @OneToMany(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-    private List<PostPhoto> postphotos;
-    
-    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-    private BlissfoodUser giver;
-    
-    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-    private BlissfoodUser receiver;
+//    
+//    @OneToMany(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private List<PostPhoto> postphotos;
+//    
+//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private BlissfoodUser giver;
+//    
+//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
+//    private BlissfoodUser receiver;
     
     public Long getId() {
         return id;
@@ -181,29 +181,29 @@ public class Post implements Serializable {
         this.numReports = numReports;
     }
 
-    public List<PostPhoto> getPostphotos() {
-        return postphotos;
-    }
-
-    public void setPostphotos(List<PostPhoto> postphotos) {
-        this.postphotos = postphotos;
-    }
-
-    public BlissfoodUser getGiver() {
-        return giver;
-    }
-
-    public void setGiver(BlissfoodUser giver) {
-        this.giver = giver;
-    }
-
-    public BlissfoodUser getReceiver() {
-        return receiver;
-    }
-
-    public void setReceiver(BlissfoodUser receiver) {
-        this.receiver = receiver;
-    }
+//    public List<PostPhoto> getPostphotos() {
+//        return postphotos;
+//    }
+//
+//    public void setPostphotos(List<PostPhoto> postphotos) {
+//        this.postphotos = postphotos;
+//    }
+//
+//    public BlissfoodUser getGiver() {
+//        return giver;
+//    }
+//
+//    public void setGiver(BlissfoodUser giver) {
+//        this.giver = giver;
+//    }
+//
+//    public BlissfoodUser getReceiver() {
+//        return receiver;
+//    }
+//
+//    public void setReceiver(BlissfoodUser receiver) {
+//        this.receiver = receiver;
+//    }
     
     
 }
