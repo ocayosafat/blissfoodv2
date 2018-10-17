@@ -8,9 +8,7 @@ package entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,6 +23,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 public class Post implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,23 +34,27 @@ public class Post implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date created;
     private String category;
-    private String condition; // New, Partially Used Up
+    private String foodCondition; // New, Partially Used Up
     private String location;
+    @Temporal(TemporalType.DATE)
     private Date expiry;
     private boolean extended;
     private int numLikes;
     private boolean deleted;
     private int numReports;
-//    
-//    @OneToMany(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private List<PostPhoto> postphotos;
-//    
-//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private BlissfoodUser giver;
-//    
-//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private BlissfoodUser receiver;
-    
+
+    @OneToMany
+    private List<PostPhoto> postphotos;
+
+    @ManyToOne
+    private BlissfoodUser giver;
+
+    @ManyToOne
+    private BlissfoodUser receiver;
+
+    @OneToMany(mappedBy="post")
+    private List<ReportPost> reports;
+
     public Long getId() {
         return id;
     }
@@ -125,14 +128,6 @@ public class Post implements Serializable {
         this.category = category;
     }
 
-    public String getCondition() {
-        return condition;
-    }
-
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
     public String getLocation() {
         return location;
     }
@@ -181,29 +176,55 @@ public class Post implements Serializable {
         this.numReports = numReports;
     }
 
-//    public List<PostPhoto> getPostphotos() {
-//        return postphotos;
-//    }
-//
-//    public void setPostphotos(List<PostPhoto> postphotos) {
-//        this.postphotos = postphotos;
-//    }
-//
-//    public BlissfoodUser getGiver() {
-//        return giver;
-//    }
-//
-//    public void setGiver(BlissfoodUser giver) {
-//        this.giver = giver;
-//    }
-//
-//    public BlissfoodUser getReceiver() {
-//        return receiver;
-//    }
-//
-//    public void setReceiver(BlissfoodUser receiver) {
-//        this.receiver = receiver;
-//    }
-    
-    
+    public List<PostPhoto> getPostphotos() {
+        return postphotos;
+    }
+
+    public void setPostphotos(List<PostPhoto> postphotos) {
+        this.postphotos = postphotos;
+    }
+
+    public BlissfoodUser getGiver() {
+        return giver;
+    }
+
+    public void setGiver(BlissfoodUser giver) {
+        this.giver = giver;
+    }
+
+    public BlissfoodUser getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(BlissfoodUser receiver) {
+        this.receiver = receiver;
+    }
+
+    /**
+     * @return the foodCondition
+     */
+    public String getFoodCondition() {
+        return foodCondition;
+    }
+
+    /**
+     * @param foodCondition the foodCondition to set
+     */
+    public void setFoodCondition(String foodCondition) {
+        this.foodCondition = foodCondition;
+    }
+
+    /**
+     * @return the reports
+     */
+    public List<ReportPost> getReports() {
+        return reports;
+    }
+
+    /**
+     * @param reports the reports to set
+     */
+    public void setReports(List<ReportPost> reports) {
+        this.reports = reports;
+    }
 }

@@ -6,9 +6,7 @@
 package entity;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,14 +27,14 @@ public class Chatlog implements Serializable {
 
     private String chat;
 
-//    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private Post post;
-//
-//    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private BlissfoodUser giver;
-//
-//    @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private BlissfoodUser receiver;
+    @OneToOne
+    private Post post;
+
+    @ManyToOne
+    private BlissfoodUser giver;
+
+    @ManyToOne
+    private BlissfoodUser receiver;
 
     public Long getId() {
         return id;
@@ -83,6 +81,48 @@ public class Chatlog implements Serializable {
      */
     public void setChat(String chat) {
         this.chat = chat;
+    }
+
+    /**
+     * @return the giver
+     */
+    public BlissfoodUser getGiver() {
+        return giver;
+    }
+
+    /**
+     * @param giver the giver to set
+     */
+    public void setGiver(BlissfoodUser giver) {
+        this.giver = giver;
+    }
+
+    /**
+     * @return the receiver
+     */
+    public BlissfoodUser getReceiver() {
+        return receiver;
+    }
+
+    /**
+     * @param receiver the receiver to set
+     */
+    public void setReceiver(BlissfoodUser receiver) {
+        this.receiver = receiver;
+    }
+
+    /**
+     * @return the post
+     */
+    public Post getPost() {
+        return post;
+    }
+
+    /**
+     * @param post the post to set
+     */
+    public void setPost(Post post) {
+        this.post = post;
     }
 
 }

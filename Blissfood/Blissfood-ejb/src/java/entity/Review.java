@@ -7,9 +7,7 @@ package entity;
 
 import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,7 +23,7 @@ import javax.persistence.TemporalType;
 public class Review implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private boolean liked;
     @Temporal(TemporalType.DATE)
@@ -33,12 +31,12 @@ public class Review implements Serializable {
     private String title;
     private String description;
     
-//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private BlissfoodUser giver;
-//    
-//    @ManyToOne(cascade={CascadeType.ALL}, fetch = FetchType.EAGER)
-//    private BlissfoodUser receiver;
-//    
+    @ManyToOne
+    private BlissfoodUser giver;
+    
+    @ManyToOne
+    private BlissfoodUser receiver;
+    
 
     public Long getId() {
         return id;
@@ -105,22 +103,22 @@ public class Review implements Serializable {
         this.description = description;
     }
 
-//    public BlissfoodUser getGiver() {
-//        return giver;
-//    }
-//
-//    public void setGiver(BlissfoodUser giver) {
-//        this.giver = giver;
-//    }
-//
-//    public BlissfoodUser getReceiver() {
-//        return receiver;
-//    }
-//
-//    public void setReceiver(BlissfoodUser receiver) {
-//        this.receiver = receiver;
-//    }
-//    
-//    
+    public BlissfoodUser getGiver() {
+        return giver;
+    }
+
+    public void setGiver(BlissfoodUser giver) {
+        this.giver = giver;
+    }
+
+    public BlissfoodUser getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(BlissfoodUser receiver) {
+        this.receiver = receiver;
+    }
+    
+    
     
 }
